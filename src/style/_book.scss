@@ -1,0 +1,54 @@
+.book-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-item {
+  width: 300px;
+  height: 520px;
+  box-shadow: 3px 3px 5px 6px $accidental;
+  margin: 10px 0 0 10px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  width: 220px;
+  margin: 10px 10px 10px 10px;
+  
+}
+
+.booklist-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 12%;
+  cursor: pointer;
+}
+.booklist-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 12%;
+  cursor: pointer;
+}
+.book-item-title {
+    text-align: center;
+}
+.booklist-left:hover, .booklist-right:hover {
+    color: $accidental;
+}
+.booklist-downpanel-cover {
+    width: 80px;
+    height: 120px;
+    cursor: pointer;
+}
+.booklist-downpanel-cover:hover {
+    box-shadow: 3px 3px 4px 6px $accidental;
+}
+.book-item-author, .book-item-pageNr {
+    margin: 0.5rem;
+    text-align: center;
+}

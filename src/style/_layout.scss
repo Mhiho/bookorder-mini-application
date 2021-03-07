@@ -10,9 +10,7 @@
   background: $main;
   width: 100vw;
 }
-.nav-light {
-  background: $second;
-}
+
 .layout-ul {
   width: 75%;
   display: flex;
@@ -31,13 +29,7 @@
     color: $second;
     text-decoration: none;
     &:hover {
-      color: $white;
-    }
-  }
-  .layout-a-light {
-    color: $main;
-    &:hover {
-      color: darken($main, 15%);
+      color: grey;
     }
   }
 }
@@ -93,19 +85,10 @@ footer {
     color: $second;
   }
   &:hover {
-    color: $white;
+    color: $accidental;
   }
 }
-.layout-footer-light {
-  background: $second;
-  color: $main;
-}
-.layout-footer-a-light strong {
-  color: $main;
-  &:hover {
-    color: darken($main, 15%);
-  }
-}
+
 .layout-footer-span {
   margin-right: 64px;
 }
