@@ -3,7 +3,7 @@
 .layout-container {
   max-width: 1000px;
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 3vh;
 }
 
 .nav {
@@ -12,16 +12,16 @@
 }
 
 .layout-ul {
-  width: 75%;
+  width: 100%;
   display: flex;
   margin: 0;
   list-style-type: none;
-  padding: 0 16px 0 0;
   height: 5rem;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  & li {
-    min-width: 102px;
+}
+  .layout-ul li {
+    width: 120px;
     margin: 0 6px 0 6px;
   }
   .layout-a {
@@ -29,44 +29,18 @@
     color: $second;
     text-decoration: none;
     &:hover {
-      color: grey;
-    }
-  }
-}
-
-@media (max-width: 460px) {
-  .layout-ul {
-    padding: 0;
-    & li {
-      min-width: 75px;
+      color: $accidental;
     }
   }
 
-  .layout-a {
-    font-size: 0.9rem;
-  }
-}
-.layout-logo {
-  display: block;
-  float: left;
-  padding: 14px;
-  cursor: pointer;
-}
+
 .layout-ul li {
   display: block;
   float: right;
 }
-.rotateLogo {
-  animation: rotate 0.3s linear forwards;
-}
-@keyframes rotate {
-  100% {
-    transform: rotate(-180deg);
-  }
-}
 
 footer {
-  margin-top: 10vh;
+  margin-top: 6vh;
   background: $main;
   color: $second;
   width: 100vw;
@@ -93,5 +67,5 @@ footer {
   margin-right: 64px;
 }
 main {
-  min-height: 60vh;
+  min-height: 100vh;
 }

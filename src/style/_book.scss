@@ -1,3 +1,5 @@
+@import './colors';
+
 .book-container {
   display: flex;
   justify-content: center;
@@ -17,7 +19,6 @@
 img {
   width: 220px;
   margin: 10px 10px 10px 10px;
-  
 }
 
 .booklist-left {
@@ -34,21 +35,33 @@ img {
   padding-right: 12%;
   cursor: pointer;
 }
-.book-item-title {
-    text-align: center;
-}
-.booklist-left:hover, .booklist-right:hover {
-    color: $accidental;
+
+.booklist-left:hover,
+.booklist-right:hover {
+  color: $accidental;
 }
 .booklist-downpanel-cover {
-    width: 80px;
-    height: 120px;
-    cursor: pointer;
+  width: 80px;
+  height: 120px;
+  cursor: pointer;
 }
 .booklist-downpanel-cover:hover {
-    box-shadow: 3px 3px 4px 6px $accidental;
+  box-shadow: 3px 3px 4px 6px $accidental;
 }
-.book-item-author, .book-item-pageNr {
-    margin: 0.5rem;
-    text-align: center;
+.book-item-title,
+.book-item-author,
+.book-item-pageNr {
+  margin: 0.5rem;
+  text-align: center;
+}
+button {
+  background-color: white;
+  color: darken($main,40%);
+  border: 2px solid darken($main,40%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+    border: 2px solid $main;
+    color: $main;
 }
