@@ -1,12 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../style/main.scss";
-import hat from "../assets/img/hat.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faStoreAlt } from '@fortawesome/free-solid-svg-icons';
 
+const home = <FontAwesomeIcon icon={faHome} />
+const basket = <FontAwesomeIcon icon={faShoppingBasket} />
+const order = <FontAwesomeIcon icon={faStoreAlt} />
 const menuLinks = [
-  { name: "Strona główna", link: "/" },
-  { name: "Koszyk", link: "/basket" },
-  { name: "Zamawiam", link: "/order" },
+  { name: home, link: "/" },
+  { name: basket, link: "/basket" },
+  { name: order, link: "/order" },
 ];
 
 function Layout({ children }) {
@@ -18,7 +24,7 @@ function Layout({ children }) {
           <div
             className={`layout-logo`}
           >
-            <img src={hat} alt="kapelusz" />
+         
           </div>
           <ul className="layout-ul">
             {menuLinks.map((item, index) => {
@@ -28,7 +34,7 @@ function Layout({ children }) {
                     className={`layout-a`}
                     to={item.link}
                   >
-                    {item.name.toUpperCase()}
+                    {item.name}
                   </Link>
                 </li>
               );
