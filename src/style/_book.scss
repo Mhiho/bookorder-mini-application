@@ -1,4 +1,4 @@
-@import './colors';
+@import "./colors";
 
 .book-container {
   display: flex;
@@ -20,7 +20,16 @@ img {
   width: 220px;
   margin: 10px 10px 10px 10px;
 }
-
+.booklist-arrows {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.booklist-arrows span {
+  width: 50%;
+  font-size: 34px;
+  cursor: pointer;
+}
 .booklist-left {
   display: flex;
   justify-content: flex-start;
@@ -38,7 +47,7 @@ img {
 
 .booklist-left:hover,
 .booklist-right:hover {
-  color: $accidental;
+  color: $white;
 }
 .booklist-downpanel-cover {
   width: 80px;
@@ -55,13 +64,14 @@ img {
   text-align: center;
 }
 button {
+  height: 34px;
   background-color: white;
-  color: darken($main,40%);
-  border: 2px solid darken($main,40%);
+  color: darken($main, 40%);
+  border: 2px solid darken($main, 40%);
   border-radius: 5px;
   cursor: pointer;
 }
 button:hover {
-    border: 2px solid $main;
-    color: $main;
+  border: 2px solid $main;
+  color: $main;
 }

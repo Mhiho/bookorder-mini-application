@@ -4,13 +4,12 @@ export const booksReducer = (state = {}, action) => {
   switch (action.type) {
     case FETCH_BOOKS:
       return {
-        ...state,
-        data: action.payload,
+        ...state, books: action.payload
       };
     case FETCH_FAILURE:
       return {
         ...state,
-        data: []
+        books: []
       }
     default:
       return state;

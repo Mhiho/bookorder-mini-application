@@ -3,7 +3,8 @@
 .layout-container {
   max-width: 1000px;
   margin: auto;
-  margin-top: 3vh;
+  padding: 5vh;
+  background: lighten($accidental,40%);
 }
 
 .nav {
@@ -40,7 +41,6 @@
 }
 
 footer {
-  margin-top: 6vh;
   background: $main;
   color: $second;
   width: 100vw;
@@ -67,5 +67,5 @@ footer {
   margin-right: 64px;
 }
 main {
-  min-height: 100vh;
+  min-height: 80vh;
 }

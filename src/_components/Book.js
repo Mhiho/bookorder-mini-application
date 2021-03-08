@@ -9,7 +9,7 @@ function Book(props) {
         <img src={props.cover} alt="cover" />
         <h4 className='book-item-author'>{`Autor: ${props.author}`}</h4>
         <h5 className='book-item-pageNr'>Liczba stron:{` ${props.pageNr}`}</h5>
-        <button>Dodaj do koszyka</button>
+        <button onClick={props.onclick}>Dodaj do koszyka</button>
       </div>
     </div>
   );
