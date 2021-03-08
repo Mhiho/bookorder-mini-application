@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faStoreAlt } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 const home = <FontAwesomeIcon icon={faHome} />
 const basket = <FontAwesomeIcon icon={faShoppingBasket} />
 const order = <FontAwesomeIcon icon={faStoreAlt} />
-const menuLinks = [
-  { name: home, link: "/" },
-  { name: basket, link: "/basket" },
-  { name: order, link: "/order" },
-];
 
 function Layout({ children }) {
-
+  const {selectedBooks} = useSelector(state => state.selectedBooks);
+  const menuLinks = [
+    { name: home, link: "/", alternative: null },
+    { name: basket, link: "/basket",alternative: `(${selectedBooks.length})` },
+    { name: order, link: "/order", alternative: null },
+  ];
   return (
     <>
       <header>
@@ -35,6 +36,7 @@ function Layout({ children }) {
                     to={item.link}
                   >
                     {item.name}
+                    {item.alternative}
                   </Link>
                 </li>
               );

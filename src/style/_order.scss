@@ -1,19 +1,10 @@
-table {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 80%;
-    flex-direction: column;
-    margin: 5%;
-}
+
 tr,th {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 td {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -40,7 +31,7 @@ form {
   }
   
   p {
-    color: $main;
+    color: #ec5990;
   }
   
   p::before {
@@ -82,28 +73,22 @@ form {
     font-weight: 100;
     letter-spacing: 10px;
   }
+  @media (max-width: 500px) {
+      input[type=submit] {
+          letter-spacing: 2px;
+      }
+  }
   
   button[type="submit"]:hover,
   input[type="submit"]:hover {
     background: #bf1650;
-  }
-  
-  button[type="submit"]:active,
-  input[type="button"]:active,
-  input[type="submit"]:active {
-    transition: 0.3s all;
-    transform: translateY(3px);
-    border: 1px solid transparent;
-    opacity: 0.8;
+    cursor: pointer;
   }
   
   input:disabled {
     opacity: 0.4;
   }
-  
-  input[type="button"]:hover {
-    transition: 0.3s all;
-  }
+
   
   button[type="submit"],
   input[type="button"],
@@ -133,7 +118,6 @@ form {
   button {
     display: block;
     appearance: none;
-    // margin-top: 40px;
     border: 1px solid #333;
     margin-bottom: 20px;
     text-transform: uppercase;
