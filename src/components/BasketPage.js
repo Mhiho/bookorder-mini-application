@@ -15,10 +15,9 @@ function BasketPage() {
         selectedBooks.selectedBooks &&
         selectedBooks.selectedBooks.length === 0 ? null : (
           <div>
-            <Link to="/order"><button className='basket-forward'>
-                DALEJ
-                </button>
-                </Link>
+            <Link to="/order">
+              <button className="basket-forward">DALEJ</button>
+            </Link>
           </div>
         )}
         {selectedBooks &&
@@ -26,11 +25,11 @@ function BasketPage() {
         selectedBooks.selectedBooks.length === 0 ? (
           <div className="basket-empty-container">
             <h1>Nie wybrałeś żadnej książki</h1>
-            <Link to="/">
-              <button>Powrót do sklepu
-
-            </button>
+            <div className="booklist-container">
+              <Link to="/">
+                <button>Powrót do sklepu</button>
               </Link>
+            </div>
           </div>
         ) : (
           selectedBooks &&
@@ -43,7 +42,10 @@ function BasketPage() {
               >
                 <h2>{book.title}</h2>
                 <img src={book.cover_url} alt="okładka-koszyk" />
-                <button className='basket-delete' onClick={() => dispatch(removeBook(book.id))}>
+                <button
+                  className="basket-delete"
+                  onClick={() => dispatch(removeBook(book.id))}
+                >
                   Usuń z koszyka
                 </button>
               </div>

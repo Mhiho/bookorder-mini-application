@@ -75,3 +75,9 @@ button:hover {
   border: 2px solid $main;
   color: $main;
 }
+.booklist-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

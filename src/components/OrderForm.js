@@ -26,10 +26,12 @@ function OrderForm(props) {
               return (
                 <tr>
                   <td>{book.title}</td>
-                  <td>{book.price}</td>
+                  <td>{selectedBooks &&
+                selectedBooks.selectedBooks.length !== 0 && `${book.price} PLN`}</td>
                 </tr>
               );
             })}
+              <div className='order-line'></div>
           <tr>
             <th>Suma zakupionych książek</th>
             <td>

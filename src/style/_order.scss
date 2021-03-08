@@ -3,8 +3,10 @@ tr,th {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin: 3px;
 }
 td {
+    margin: 3px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -124,4 +126,9 @@ form {
     padding: 10px 20px;
     border-radius: 4px;
   }
-  
+  .order-line {
+      height: 2px;
+      width: 100%;
+      background: $white;
+      margin-top: 20px;
+  }
