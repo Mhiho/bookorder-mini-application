@@ -1,52 +1,55 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "../style/main.scss";
+import axios from '../axiosInstance';
+import { useSelector } from 'react-redux';
 
 function Order() {
+  const { selectedBooks } = useSelector(state=> state.selectedBooks)
+  const order = selectedBooks.map(b=> { return{id: b.id, quantity: b.quantity}});
+  console.log(order)
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    axios({
+        method: 'post',
+        url: '/order',
+        data: {
+            order: order,
+            first_name: data.first_name,
+            last_name: data.last_name,
+            city: data.city,
+            zip_code: data.zip_code
+        }
+    })    
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="firstName">Imię</label>
+      <label htmlFor="first_name">Imię</label>
       <input
-        name="firstName"
+        name="first_name"
         placeholder="Wpisz imię"
         ref={register({
           validate: (value) => value.length > 3 && value.length < 20,
         })}
       />
-      {errors.firstName && (
+      {errors.first_name && (
         <p>Imię nie może być krótsze niż 3 i dłuższe niż 20 znaków.</p>
       )}
 
-      <label htmlFor="lastName">Nazwisko</label>
+      <label htmlFor="last_name">Nazwisko</label>
       <input
-        name="lastName"
+        name="last_name"
         placeholder="Wpisz nazwisko"
         ref={register({
           validate: (value) => value.length > 2 && value.length < 20,
         })}
       />
-      {errors.lastName && (
+      {errors.last_name && (
         <p>Nazwisko nie może być krótsze niż 3 i dłuższe niż 20 znaków</p>
       )}
 
-      <label htmlFor="email">Email</label>
-      <input
-        name="email"
-        placeholder="Wpisz email"
-        type="email"
-        ref={register({
-          validate: (value) => {
-            const adres = /\S+@\S+\.\S+/;
-            return adres.test(value);
-          },
-        })}
-      />
-      {errors.email && <p>Wprowadź poprawny email</p>}
+     
 
       <label htmlFor="city">Miejscowość</label>
       <input
@@ -59,15 +62,15 @@ function Order() {
       {errors.city && (
         <p>Miejscowość nie może być któtsza niż 3 ani dłuższe niż 20 znaków</p>
       )}
-      <label htmlFor="postalCode">Kod pocztowy</label>
+      <label htmlFor="zip_code">Kod pocztowy</label>
       <input
-        name="postalCode"
+        name="zip_code"
         placeholder="Wpisz kod pocztowy"
         ref={register({
           validate: (value) => value !== "",
         })}
       />
-      {errors.postalCode && <p>Wpisz kod pocztowy.</p>}
+      {errors.zip_code && <p>Wpisz kod pocztowy.</p>}
       <input type="submit" value="ZAMAWIAM I PŁACĘ" />
     </form>
   );

@@ -6,8 +6,10 @@ import "../style/main.scss";
 import Layout from "../hoc/Layout";
 
 function BasketPage() {
-  const selectedBooks = useSelector((state) => state.selectedBooks);
-  const dispatch = useDispatch();
+    const books = useSelector(state => state.books)
+    const selectedBooks = useSelector((state) => state.selectedBooks);
+
+    const dispatch = useDispatch();
   return (
     <Layout>
       <div className="basket-container">
@@ -40,8 +42,8 @@ function BasketPage() {
                 key={`selected-books-${book.id}`}
                 className="basket-one-book"
               >
-                <h2>{book.title}</h2>
-                <img src={book.cover_url} alt="okładka-koszyk" />
+                <h2>{book.book.title}</h2>
+                <img src={book.book.cover_url} alt="okładka-koszyk" />
                 <button
                   className="basket-delete"
                   onClick={() => dispatch(removeBook(book.id))}

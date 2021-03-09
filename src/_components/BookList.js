@@ -16,6 +16,7 @@ function BookList() {
   const books = useSelector(
     (state) => state.books.books && state.books.books.data
   );
+  const { selectedBooks } = useSelector((state) => state.selectedBooks);
   const st = useSelector((state) => state);
   console.log(st);
   const narrowLeft = () => {
@@ -25,6 +26,7 @@ function BookList() {
     id >= books.length - 1 ? setId(0) : setId(id + 1);
   };
   const selectFromDownPanel = (id) => setId(id);
+
   return (
     <>
       <div className="booklist-container">
@@ -39,7 +41,9 @@ function BookList() {
           cover={books[id].cover_url}
           author={books[id].author}
           pageNr={books[id].pages}
-          onclick={() => dispatch(chooseBook(books[id]))}
+          onclick={() => dispatch(chooseBook({ id: books[id].id, quantity: 1, book: books[id]}))
+
+          }
         />
       )}
       <div className="booklist-arrows">
